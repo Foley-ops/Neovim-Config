@@ -58,7 +58,7 @@ local config = function()
 	})
 
 	local cpplint = require("efmls-configs.linters.cpplint")
-	local clang_format = require("efmls-configs.formatters.clang_format")
+	-- local clang_format = require("efmls-configs.formatters.clang_format")
 	local flake8 = require("efmls-configs.linters.flake8")
 	local black = require("efmls-configs.formatters.black")
 	local luacheck = require("efmls-configs.linters.luacheck")
@@ -69,7 +69,7 @@ local config = function()
 		filetypes = {
 			"lua",
 			"python",
-            "c"
+			"c",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -81,7 +81,7 @@ local config = function()
 		},
 		settings = {
 			languages = {
-                c = {cpplint, clang_format},
+				c = { cpplint },
 				python = { flake8, black },
 				lua = { luacheck, stylua },
 			},
